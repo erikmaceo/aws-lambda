@@ -1,0 +1,32 @@
+# Welcome to Serverless!
+
+
+service: curso-hola-mundo
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-offline  
+
+
+
+functions:
+  hello:
+    handler: handler.hello
+  helloUser:
+    handler: handler.helloUser
+    events: 
+      - http:
+          method: GET
+          path: /user/{name}
+  createUser:
+    handler: handler.createUser
+    events: 
+      - http:
+          method: POST
+          path: /user
+

@@ -8,7 +8,6 @@ module.exports.hello = async (event) => {
     body: JSON.stringify(
       {
         message: 'Hola Mundo successfully',
-        data:'dfdfdf',
         input: event,
       },
       null,
@@ -16,9 +15,11 @@ module.exports.hello = async (event) => {
     ),
   };
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 }
+
+
+
+
 
 module.exports.helloUser = async (event) =>  {
   return {
@@ -51,5 +52,6 @@ module.exports.createUser = async (event) =>  {
   };
 
 }
+
 
 
